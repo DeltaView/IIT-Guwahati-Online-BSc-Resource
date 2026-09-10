@@ -11,5 +11,5 @@ Basic structure of a C program, executing a C program; data types, operators and
 
 ## Textbooks
 
-- Kernighan B.W and Dennis M. Ritchie, The C Programming Language, 2nd Edition, Pearson Education India, 2015.
+- [Kernighan B.W and Dennis M. Ritchie, The C Programming Language, 2nd Edition, Pearson Education India, 2015](/Courses/DA-104/Books/The-C-Programming-Language.pdf)
 - Byron S. Gottfried, Programming with C, 4th Edition, McGraw Hill (Schaum's Outlines), 2018.

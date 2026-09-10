@@ -11,8 +11,8 @@ Basics of probability and random variables, distribution functions, probability 
 
 ## Textbooks
 
-- Hogg, R.V., McKean, J. and Craig, A.T., Introduction to Mathematical Statistics, 7th Edition, Pearson Education, 2012.
-- Rice, J.A., Mathematical Statistics and Data Analysis, 3rd Edition, Cengage Learning, 2006.
+- [Hogg, R.V., McKean, J. and Craig, A.T., Introduction to Mathematical Statistics, 7th Edition, Pearson Education, 2012](/Courses/DA-103/Books/Hogg-McKean-Craig.pdf)
+- [Rice, J.A., Mathematical Statistics and Data Analysis, 3rd Edition, Cengage Learning, 2006](/Courses/DA-103/Books/Rice.PDF)
 
 ## References
 

@@ -11,9 +11,9 @@ Different forms of data (structured, unstructured, temporal and spatial) and the
 
 ## Textbooks
 
-- Wayne Winston, Microsoft Excel Data Analysis and Business Modeling, 7th Edition, Pearson Education, Inc., 2022.
-- Michael Alexander, Richard Kusleika, John Walkenbach, Excel 2019 Bible, 1st Edition, Wiley, 2018.
+- [Wayne Winston, Microsoft Excel Data Analysis and Business Modeling, 7th Edition, Pearson Education, Inc., 2022](/Courses/DA-102/Books/Wayne-Winston.pdf)
+- [Michael Alexander, Richard Kusleika, John Walkenbach, Excel 2019 Bible, 1st Edition, Wiley, 2018](/Courses/DA-102/Books/Excel-2019-Bible.pdf)
 
 ## References
 
-- Gordon S. Linoff, Data Analysis Using SQL and Excel, 2nd Edition, Wiley Publishing Inc., 2016.
+- [Gordon S. Linoff, Data Analysis Using SQL and Excel, 2nd Edition, Wiley Publishing Inc., 2016](/Courses/DA-102/Books/Gordon-Linoff.pdf)
