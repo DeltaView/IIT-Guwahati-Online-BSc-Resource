@@ -4,6 +4,11 @@ This repository is a collection of resources for students enrolled in the **BSc 
 
 The goal of this repository is to make useful academic resources easier to find, organize, and share among students.
 
+## Browse Resources
+
+- [By Trimester](/Trimesters/README.md)
+- [By Individual Courses](/Courses/README.md)
+
 ## What's Inside
 
 Depending on the course and semester, you may find resources such as:
