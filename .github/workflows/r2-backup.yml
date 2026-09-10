@@ -1,0 +1,69 @@
+name: Backup to Cloudflare R2
+
+on:
+  push:
+    branches:
+      - main
+
+  # Allows manual backup from GitHub Actions
+  workflow_dispatch:
+
+# If several pushes happen quickly, don't run backups simultaneously.
+concurrency:
+  group: r2-backup-${{ github.repository }}
+  cancel-in-progress: false
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Install restic
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y restic
+
+      - name: Backup repository to R2
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+
+          RESTIC_PASSWORD: ${{ secrets.RESTIC_PASSWORD }}
+
+          RESTIC_REPOSITORY: >-
+            s3:https://${{ secrets.R2_ACCOUNT_ID }}.r2.cloudflarestorage.com/${{ secrets.R2_BUCKET }}
+
+        run: |
+          set -euo pipefail
+
+          echo "Checking restic repository..."
+
+          if ! restic cat config >/dev/null 2>&1; then
+            echo "No restic repository found. Initializing..."
+            restic init
+          fi
+
+          echo "Backing up repository..."
+
+          restic backup . \
+            --exclude=".git" \
+            --tag="github" \
+            --tag="${{ github.repository }}" \
+            --tag="${{ github.sha }}"
+
+          echo "Backup complete."
+
+      - name: Show snapshots
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          RESTIC_PASSWORD: ${{ secrets.RESTIC_PASSWORD }}
+          RESTIC_REPOSITORY: >-
+            s3:https://${{ secrets.R2_ACCOUNT_ID }}.r2.cloudflarestorage.com/${{ secrets.R2_BUCKET }}
+        run: |
+          restic snapshots --latest 5
