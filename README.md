@@ -8,6 +8,8 @@ The goal of this repository is to make useful academic resources easier to find,
 
 - [By Trimester](/Trimesters/README.md)
 - [By Individual Courses](/Courses/README.md)
+- [Important Links](/Important-Links.md)
+- [Meta Documents](/Meta-Documents/README.md)
 
 ## What's Inside
 
